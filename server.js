@@ -6,6 +6,7 @@
 // camera
 // price_1Lx9y3SBLeVsM0Y2f1KKPw2o
 const express =require('express');
+require("dotenv").config();
 var cors=require('cors');
 const { writeHeapSnapshot } = require('v8');
 const stripe=require('stripe')('sk_test_51Lx9nCSBLeVsM0Y2sk1pyBbqjST12fbJcPbSFckKKEo5vKBIIz3p9iEqWDC2bmZFKRmq4jx5xOWGQ3bmeqzwcEOI008L9L1kMP');
@@ -47,8 +48,9 @@ app.post("/checkout",async(req,res)=>{
         url:session.url
      }))
 })
-app.listen(5000,()=>{
-    console.log("Listening on port 5000")
+let port=process.env.PORT || 5000
+app.listen(port,()=>{
+    console.log(`Listening on port ${port}`)
 });
 
 app.get('/',(req,res)=>{
