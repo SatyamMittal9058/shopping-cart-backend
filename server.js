@@ -47,8 +47,11 @@ app.post("/checkout",async(req,res)=>{
         url:session.url
      }))
 })
-app.listen(5000,(req,res)=>{
+app.listen(5000,()=>{
     console.log("Listening on port 5000")
-    res.send('Api running successfully');
 });
+
+app.get('/',(req,res)=>{
+    res.send('api running successfully')
+})
 
