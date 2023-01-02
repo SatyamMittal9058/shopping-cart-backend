@@ -42,7 +42,7 @@ app.post("/checkout",async(req,res)=>{
         line_items:lineItems,
         mode:'payment',
         success_url:"https://shop-cart2.netlify.app/success",
-        cancel_url:"https://shop-cart2.netlify.app//cancel",  
+        cancel_url:"https://shop-cart2.netlify.app/cancel",  
     })
      res.send(JSON.stringify({ 
         url:session.url
